@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Success</title>
+</head>
+<body>
+    <h1>You are now logged in</h1>
+    <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <input type="submit" value='LOGOUT'>
+    </form>
+    <form method="POST" action="{% url 'password_change' %}">
+        {% csrf_token %}
+        <input type="submit" value='Password change'>
+    </form>
+    <form method="POST" action="{% url 'password_reset' %}">
+        {% csrf_token %}
+        <input type="submit" value='Password Reset'>
+    </form>
+    <form method="POST" action="{% url 'password_reset_complete' %}">
+        {% csrf_token %}
+        <input type="submit" value='Password Reset complete'>
+    </form>
+</body>
+</html>
